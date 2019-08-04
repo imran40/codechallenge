@@ -11,7 +11,7 @@ public class VendingMachineImpl implements VendingMachine, VendingMachineHardwar
 
 	private Map<Integer, Product> productsCatalog = null;
 	private static VendingMachineImpl vendingMachineImpl = null;
-	private String filePath = "C:\\Users\\Ali\\git\\codechallenge\\CodeChallenge\\products\\";
+	private String filePath = new File("").getAbsolutePath() + File.separator + "products"  + File.separator;
 	private String fileName = "products.txt";
 	private Integer userMoneyInCents = 0;
 
