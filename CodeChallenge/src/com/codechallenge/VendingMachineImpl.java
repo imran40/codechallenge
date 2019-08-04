@@ -11,13 +11,9 @@ public class VendingMachineImpl implements VendingMachine, VendingMachineHardwar
 
 	private Map<Integer, Product> productsCatalog = null;
 	private static VendingMachineImpl vendingMachineImpl = null;
-	private String filePath = "C:\\workspaces\\carrierdirect\\CodeChallenge\\products\\";
+	private String filePath = "C:\\Users\\Ali\\git\\codechallenge\\CodeChallenge\\products\\";
 	private String fileName = "products.txt";
 	private Integer userMoneyInCents = 0;
-
-	// vmhf.dispenseChange(10);
-	// vmhf.dispenseProduct(2, "Tylenol");
-	// vmhf.showMessage("This is a test");
 
 	private VendingMachineImpl() {
 		productsCatalog = new HashMap<Integer, Product>();
@@ -83,7 +79,7 @@ public class VendingMachineImpl implements VendingMachine, VendingMachineHardwar
 					}
 					dispenseProduct(prod.getProductPosition(), prod.getProductName());
 					addUserMoney(Integer.valueOf(-prod.getProductPrice()));
-					if(getUserMoney() > 0) {
+					if (getUserMoney() > 0) {
 						dispenseChange(getUserMoney());
 						addUserMoney((-getUserMoney()));
 					}
@@ -91,7 +87,8 @@ public class VendingMachineImpl implements VendingMachine, VendingMachineHardwar
 					showMessage("Product Out Of Stock");
 				}
 			} else {
-				showMessage("InSufficient Funds, Please add " + (prod.getProductPrice() - getUserMoney()) + " cents more!");
+				showMessage(
+						"InSufficient Funds, Please add " + (prod.getProductPrice() - getUserMoney()) + " cents more!");
 			}
 		} else {
 			showMessage("Product Not Found");

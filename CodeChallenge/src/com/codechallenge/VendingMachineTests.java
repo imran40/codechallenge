@@ -1,13 +1,13 @@
 package com.codechallenge;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class VendingMachineTests {
 	static VendingMachineImpl vmi = null;
-	
+
 	@BeforeAll
 	static void startVendingMachine() {
 		vmi = VendingMachineImpl.getInstance();
@@ -18,7 +18,7 @@ class VendingMachineTests {
 		vmi.addUserMoney(Integer.valueOf(55));
 		vmi.buttonPress(Integer.valueOf(3));
 
-		if(vmi.getUserMoney() == 0) {
+		if (vmi.getUserMoney() == 0) {
 			assertTrue(true);
 		} else {
 			vmi.addUserMoney(-vmi.getUserMoney());
@@ -31,7 +31,7 @@ class VendingMachineTests {
 		vmi.addUserMoney(Integer.valueOf(65));
 		vmi.buttonPress(Integer.valueOf(3));
 
-		if(vmi.getUserMoney() == 0) {
+		if (vmi.getUserMoney() == 0) {
 			assertTrue(true);
 		} else {
 			vmi.addUserMoney(-vmi.getUserMoney());
@@ -47,7 +47,7 @@ class VendingMachineTests {
 		vmi.addUserMoney(Integer.valueOf(20));
 		vmi.buttonPress(Integer.valueOf(3));
 
-		if(vmi.getUserMoney() == 0) {
+		if (vmi.getUserMoney() == 0) {
 			assertTrue(true);
 		} else {
 			vmi.addUserMoney(-vmi.getUserMoney());
@@ -63,7 +63,7 @@ class VendingMachineTests {
 		vmi.addUserMoney(Integer.valueOf(305));
 		vmi.buttonPress(Integer.valueOf(4));
 
-		if(vmi.getProductsCatalog().get(4).isProductOOS()) {
+		if (vmi.getProductsCatalog().get(4).isProductOOS()) {
 			assertTrue(true);
 		} else {
 			vmi.addUserMoney(-vmi.getUserMoney());
@@ -79,7 +79,7 @@ class VendingMachineTests {
 		vmi.addUserMoney(Integer.valueOf(25));
 		userCurrentBalance += 25;
 
-		if(vmi.getUserMoney() == userCurrentBalance) {
+		if (vmi.getUserMoney() == userCurrentBalance) {
 			vmi.addUserMoney(-vmi.getUserMoney());
 			assertTrue(true);
 		} else {
