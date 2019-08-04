@@ -1,0 +1,4 @@
+Tylenol,1,25,6,false
+Orange Juice 20 OZ,2,210,11,false
+KitKat,3,55,3,false
+Chicken Sandwich,4,295,2,false
